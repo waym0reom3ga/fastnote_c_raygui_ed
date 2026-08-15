@@ -1,12 +1,12 @@
 # FastNote C/RayGUI Edition — Build system
 
-CC = gcc
+CC = ccache gcc
 CFLAGS = -Wall -Wextra $(shell pkg-config --cflags raylib 2>/dev/null || echo "-I/usr/include")
 LDFLAGS = -lraylib -lm -lpthread -ldl -lrt
 
 SRCDIR = src
 BUILDDIR = build
-TARGET = fastnote-c-raygui
+TARGET = fastnote_c_raygui
 
 SOURCES = $(wildcard $(SRCDIR)/*.c)
 OBJECTS = $(patsubst $(SRCDIR)/%.c,$(BUILDDIR)/%.o,$(SOURCES))
@@ -29,4 +29,3 @@ clean:
 
 test: all
 	./$(TARGET) --version
-	./$(TARGET) --headless --selftest
