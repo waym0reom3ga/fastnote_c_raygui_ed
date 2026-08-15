@@ -1,0 +1,11 @@
+test: binary_size
+  libs: libraylib.so.600,libX11.so.6,libxcb.so.1
+  notes: Lightweight. Raylib is a single shared lib. No GTK/Qt/Webkit.
+
+test: peak_ram_profile
+  capable: yes
+  notes: Requires display. Raylib + raygui immediate-mode GUI.
+
+test: gui_tools
+  capable: yes
+  notes: Raylib + raygui. No GUI test suite yet.
